@@ -3,7 +3,7 @@ const SITE_CONFIG = {
   siteSubtitle: "A clean class information hub for timetable, notices, assignments, tests, and full case study details.",
   termLabel: "NCIT · First Semester · Bulletin",
   lastUpdated: "2026-04-16 22:25",
-  infoSourceNote: "Only post what has been confirmed by the lecturer, class rep, timetable, or trusted official class message.",
+  infoSourceNote: "I only post what has been confirmed by the lecturer, class rep, timetable, or trusted official class message.",
   weekFocus: {
     title: "This week's focus",
     text: "Friday is still heavy. Keep urgent items pinned, use exact due times where available, and use the notice section for any room change, lecturer message, or class-wide alert."
@@ -54,27 +54,6 @@ const TIMETABLE_DATA = [
 ];
 
 const ANNOUNCEMENTS = [
-  {
-    id: "general-announcements",
-    title: "General announcements area",
-    type: "notice",
-    dueLabel: "Ongoing",
-    dateValue: "2026-04-15",
-    dueAt: "",
-    status: "pending",
-    pinned: true,
-    priority: "normal",
-    description: "Use this section for room changes, urgent lecturer messages, extra classes, or anything the class should know this week.",
-    detail: "This is the flexible notice section. Add last-minute changes here, then pin them if they become urgent. It now appears above the timetable so classmates see it early.",
-    questions: [],
-    actions: [
-      "Keep notices short and confirmed",
-      "Add source and updated time",
-      "Pin only high-importance notices"
-    ],
-    source: "Manual website update",
-    updatedAt: "2026-04-15 19:46"
-  },
   {
     id: "tc-group-print",
     title: "Print Technical Communication group work",
