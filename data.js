@@ -1,9 +1,9 @@
 const SITE_CONFIG = {
-  siteTitle: "NC IT Weekly Board",
-  siteSubtitle: "Your class hub — timetable, assignments, tests, and notices all in one place.",
-  termLabel: "NC IT · First Semester · Weekly Board",
+  siteTitle: "NC IT Notice Board",
+  siteSubtitle: "our class — timetable, assignments, tests, and notices all in one place.",
+  termLabel: "NC IT · First Semester · Notice Board",
   lastUpdated: "2026-04-16 08:00",
-  infoSourceNote: "Only post what has been confirmed by the lecturer, class rep, timetable, or official class message.",
+  infoSourceNote: "I only post what has been confirmed by the lecturer, class rep, timetable, or official class message.",
   weekFocus: { title: "This week's focus", text: "Friday is heavy: Technical Communication print work, Programming case study, Technical Communication test, and Programming test are all active. Keep urgent items pinned and set fasttrack on anything that suddenly becomes more important." }
 };
 const TIMETABLE_DATA = [
