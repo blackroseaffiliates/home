@@ -1,1 +1,119 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>NC IT Weekly Board</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css" /></head><body><div class="page"><div class="container"><section class="hero"><div class="hero-content"><span class="hero-eyebrow" id="term-label">NC IT · First Semester · Weekly Board</span><h1 id="site-title">NC IT <span>Weekly Board</span></h1><p class="hero-sub" id="site-subtitle"></p><div class="hero-cards"><div class="hero-card"><div class="hero-card-label">How to update</div><div class="hero-card-text">Edit <code class="inline">data.js</code>, commit, and push to GitHub. No website login is needed.</div></div><div class="hero-card"><div class="hero-card-label">Built for</div><div class="hero-card-text">Phones, tablets, laptops, and desktops. One link for the whole class.</div></div></div></div></section><div class="stats" id="stats"></div><section class="section"><div class="week-focus"><div class="focus-card"><h3 id="week-focus-title"></h3><p id="week-focus-text"></p></div><div class="source-card"><h3>Accuracy rules</h3><p id="source-note"></p><ul><li>Always include the source for each update.</li><li>Update the timestamp whenever you edit an item.</li><li>Use <code class="inline">fasttrack</code>, <code class="inline">normal</code>, or <code class="inline">postponed</code> to control urgency.</li></ul><p style="margin-top:10px;color:var(--muted)">Last updated: <strong id="last-updated"></strong></p></div></div></section><section class="section"><div class="section-head"><div><div class="section-title">Weekly Timetable</div><div class="section-sub">First semester schedule — all sessions, breaks, and lecturers at a glance.</div></div><div id="today-indicator"></div></div><div class="table-wrap"><table><thead id="table-head"></thead><tbody id="schedule-body"></tbody></table></div><div class="legend" id="legend"></div></section><section class="section"><div class="section-head"><div><div class="section-title">Announcements, Assignments &amp; Tests</div><div class="section-sub">Open each item to read full details, case study questions, instructions, or class notes.</div></div><div class="toolbar"><div class="search-wrap"><span class="search-icon">⌕</span><input id="search" class="search" type="search" placeholder="Search announcements, questions, actions..." autocomplete="off" /></div><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="assignment">Assignments</button><button class="filter-btn" data-filter="test">Tests</button><button class="filter-btn" data-filter="notice">Notices</button><button class="filter-btn" data-filter="open">Pending</button></div></div><div class="cards-list" id="updates"></div></section><div class="footer">NC IT WEEKLY BOARD · EDIT DATA.JS · PUSH TO GITHUB PAGES · SHARE THE LINK</div></div></div><dialog id="announcement-modal" class="modal"><div class="modal-head"><div><div class="modal-title" id="modal-title">Announcement details</div><div class="modal-sub" id="modal-sub"></div></div><button class="modal-close" id="close-modal" aria-label="Close">✕</button></div><div class="modal-body" id="modal-content"></div></dialog><script src="./data.js"></script><script src="./app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NC IT Bulletin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+      <section class="hero anim anim-1">
+        <div class="hero-content">
+          <span class="hero-eyebrow" id="term-label">NCIT · First Semester · Bulletin</span>
+          <h1 id="site-title">NC IT Bulletin</h1>
+          <p class="hero-sub" id="site-subtitle">A clean class information hub for timetable, notices, assignments, tests, and full case study details.</p>
+          <div class="hero-cards single-card">
+            <div class="hero-card">
+              <div class="hero-card-label">Built for the class</div>
+              <div class="hero-card-text">Designed for phones, tablets, laptops, and desktops so anyone can open the same link and see the latest confirmed information.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section anim anim-2">
+        <div class="week-focus">
+          <div class="focus-card">
+            <h3 id="week-focus-title">This week's focus</h3>
+            <p id="week-focus-text"></p>
+          </div>
+          <div class="source-card">
+            <h3>Accuracy rules</h3>
+            <p id="source-note"></p>
+            <ul>
+              <li>Always include the source for each update.</li>
+              <li>Update the timestamp whenever you edit an item.</li>
+              <li>Use <code class="inline">fasttrack</code>, <code class="inline">normal</code>, or <code class="inline">postponed</code> to control urgency.</li>
+            </ul>
+            <p style="margin-top:10px;color:var(--muted)">Last updated: <strong id="last-updated"></strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section anim anim-3" id="notices-section">
+        <div class="section-head">
+          <div>
+            <div class="section-title">School notices</div>
+            <div class="section-sub">Important class or school-wide notices appear here first before the timetable and assignments.</div>
+          </div>
+        </div>
+        <div class="cards-list" id="notices-list"></div>
+      </section>
+
+      <section class="section anim anim-3">
+        <div class="section-head">
+          <div>
+            <div class="section-title">Weekly Timetable</div>
+            <div class="section-sub">First semester schedule — all sessions, breaks, and lecturers at a glance.</div>
+          </div>
+          <div id="today-indicator"></div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead id="table-head"></thead>
+            <tbody id="schedule-body"></tbody>
+          </table>
+        </div>
+
+        <div class="legend" id="legend"></div>
+      </section>
+
+      <section class="section anim anim-4">
+        <div class="section-head">
+          <div>
+            <div class="section-title">Assignments &amp; Tests</div>
+            <div class="section-sub">Open each item to read full details, case study questions, instructions, and action checklists.</div>
+          </div>
+          <div class="toolbar">
+            <div class="search-wrap">
+              <span class="search-icon">⌕</span>
+              <input id="search" class="search" type="search" placeholder="Search assignments, tests, questions, actions..." autocomplete="off" />
+            </div>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="assignment">Assignments</button>
+            <button class="filter-btn" data-filter="test">Tests</button>
+            <button class="filter-btn" data-filter="open">Pending</button>
+          </div>
+        </div>
+
+        <div class="stats in-section" id="stats"></div>
+        <div class="cards-list" id="updates"></div>
+      </section>
+
+      <div class="footer anim anim-5">
+        NC IT BULLETIN · EDIT DATA.JS · PUSH TO GITHUB PAGES · SHARE THE LINK
+      </div>
+    </div>
+  </div>
+
+  <dialog id="announcement-modal" class="modal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="modal-title">Announcement details</div>
+        <div class="modal-sub" id="modal-sub"></div>
+      </div>
+      <button class="modal-close" id="close-modal" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modal-content"></div>
+  </dialog>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
